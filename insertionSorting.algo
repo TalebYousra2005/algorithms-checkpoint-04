@@ -1,0 +1,23 @@
+FUNCTION  insertionSort(VAR arr,n) : INTEGER
+VAR
+    i,key,j:INTEGER;
+BEGIN
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        key := arr[i];
+        j := i-1;
+        WHILE (j >= 0 && arr[j]>key) DO
+            arr[j+1]:=arr[j];
+            j:=j-1;
+        END_WHILE
+        arr[j+1]:=key;
+    END_FOR
+END
+
+ALGORITHM isertionSortTest
+VAR
+    arr : ARRAY_OF INTEGER[30];
+    n:INTEGER;
+BEGIN
+    n:=arr.length;
+    insertionSort(arr, n);
+END
